@@ -1,0 +1,92 @@
+Gym by Guy Levy and Gal Maymon
+322317918
+316417195
+
+
+Gym Management System
+
+Overview
+
+The Gym Management System is a software solution designed to efficiently manage gym operations, including client registrations, session scheduling, employee management, and notifications. It handles complex scenarios like session constraints and client notifications while ensuring smooth operations.
+
+Project Structure
+
+gym/
+├── management/
+│   ├── Sessions/
+│   │   ├── Session.java               # Represents a gym session
+│   │   ├── SessionFactory.java        # Factory for creating sessions
+│   │   ├── SessionType.java           # Enum mapping to session types
+│   │   ├── ForumType.java             # Enum for session forums
+│   │   ├── LessonRegistrationFactory.java # Handles lesson registrations
+│   │   ├── SessionTypeBase.java       # Abstract base class for session types
+│   │   ├── SessionTypes/              # Folder for specific session types
+│   │   │   ├── Ninja.java             # Ninja session type
+│   │   │   ├── MachinePilates.java    # Machine Pilates session type
+│   │   │   ├── Pilates.java           # Pilates session type
+│   │   │   ├── ThaiBoxing.java        # Thai Boxing session type
+│   ├── employee/
+│   │   ├── Employee.java              # Represents a gym employee
+│   │   ├── EmployeeType.java          # Enum for employee roles
+│   │   ├── Instructor.java            # Represents an instructor
+│   ├── Secretary.java                 # Manages gym operations
+│   ├── Gym.java                       # Core class for gym functionality
+├── customers/
+│   ├── Client.java                    # Represents a gym client
+│   ├── ClientFactory.java             # Factory for creating and managing clients
+├── shared/
+│   ├── Accountable.java               # Interface for tracking financials
+│   ├── Gender.java                    # Enum for gender classification
+│   ├── Notifiable.java                # Interface for handling notifications
+│   ├── NotificationManager.java       # Centralized notification manager
+│   ├── Person.java                    # Base class for all individuals
+├── exceptions/
+│   ├── DuplicateClientException.java  # Thrown when a duplicate client is registered
+│   ├── InstructorNotQualifiedException.java # Thrown when an instructor lacks proper certification
+│   ├── NoAvailableSpotsException.java # Thrown when a session is fully booked
+│   ├── UnauthorizedActionException.java # Thrown for unauthorized actions
+
+
+Features
+Client Management:
+
+Register, unregister, and manage clients via ClientFactory.
+Handle client details like age, gender, and balance.
+Provide notification capabilities through NotificationManager.
+Session Management:
+
+Manage sessions using Session and SessionFactory.
+Handle various session types (e.g., Ninja, Pilates) via the SessionTypes folder.
+Enforce constraints like age, gender, and availability.
+Employee Management:
+
+Hire and manage employees (e.g., Instructor, Secretary).
+Track instructor certifications for session assignment.
+Notifications:
+
+Send updates and alerts using the NotificationManager.
+Custom Exceptions:
+
+Handle edge cases like duplicate registrations, session overbooking, unauthorized actions, and unqualified instructors.
+Session Types
+The following session types are implemented in the SessionTypes folder:
+
+Ninja: Max participants: 5, Cost: 150.
+MachinePilates: Max participants: 10, Cost: 80.
+Pilates: Max participants: 30, Cost: 60.
+ThaiBoxing: Max participants: 20, Cost: 100.
+
+
+Usage
+
+
+Add Clients: Use ClientFactory to register and manage clients.
+
+Create Sessions: Use SessionFactory with SessionType enums to create and configure sessions.
+
+Assign Instructors: Verify instructor certifications before assigning them to session types.
+
+Send Notifications: Use NotificationManager to handle notifications system-wide.
+
+Handle Exceptions: Catch and handle custom exceptions to manage edge cases gracefully.
+
