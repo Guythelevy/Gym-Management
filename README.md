@@ -142,8 +142,7 @@ try {
 } catch (NoAvailableSpotsException e) {
     System.out.println("Registration failed: " + e.getMessage());
 }
-Notify Participants
-java
-Copy code
+### Notify Participants
+
 NotificationManager.sendToSession(s1, "The session will start 10 minutes late.");
 
