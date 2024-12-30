@@ -124,7 +124,7 @@ The following session types are implemented in the `SessionTypes` folder:
 
 ---
 
-###There is a main example file included
+### There is a main example file included
 
 ## 🛠️ Usage
 ```java
@@ -146,5 +146,4 @@ Notify Participants
 java
 Copy code
 NotificationManager.sendToSession(s1, "The session will start 10 minutes late.");
-`'java
 
