@@ -1,30 +1,32 @@
-GymManagement 🏋️‍♀️💼
-Overview 📋
+###GymManagement 🏋️‍♀️💼
+
+##Overview 📋
+
 GymManagement is a powerful system designed to simplify and streamline gym operations, including client management, session scheduling, employee oversight, and notifications. With built-in flexibility and robust exception handling, it ensures smooth operations for gyms of all sizes.
 
-Features ✨
+##Features ✨
 Client Management 👥
 
-Register and manage clients.
+#Register and manage clients.
 Handle notifications for sessions and gym-wide updates.
 Session Management 🕒
 
-Create and manage dynamic session types (e.g., Ninja, Pilates).
+#Create and manage dynamic session types (e.g., Ninja, Pilates).
 Enforce constraints like age, gender, and availability.
 Employee Management 👩‍🏫
 
-Manage roles like Instructors and Secretaries.
+#Manage roles like Instructors and Secretaries.
 Track instructor certifications for specific session types.
 Notifications 🔔
 
-Notify participants about session updates.
+#Notify participants about session updates.
 Broadcast gym-wide announcements.
 Exception Handling ⚠️
 
-Custom exceptions for handling edge cases like duplicate registrations, overbooked sessions, and unauthorized actions.
-Project Structure 📂
-plaintext
-Copy code
+#Custom exceptions for handling edge cases like duplicate registrations, overbooked sessions, and unauthorized actions.
+
+##Project Structure 📂
+
 GymManagement/
 ├── management/
 │   ├── Sessions/
@@ -59,31 +61,30 @@ GymManagement/
 │   ├── InstructorNotQualifiedException.java # Thrown when an instructor lacks proper certification
 │   ├── NoAvailableSpotsException.java # Thrown when a session is fully booked
 │   ├── UnauthorizedActionException.java # Thrown for unauthorized actions
-Session Types 📊
+
+##Session Types 📊
 The following session types are implemented in the SessionTypes folder:
 
-Ninja 🥷: Max participants: 5, Cost: 150.
-Machine Pilates 🧘‍♂️: Max participants: 10, Cost: 80.
-Pilates 🧘‍♀️: Max participants: 30, Cost: 60.
-Thai Boxing 🥊: Max participants: 20, Cost: 100.
-Usage 🛠️
-Register a Client
-java
-Copy code
+#Ninja 🥷: Max participants: 5, Cost: 150.
+#Machine Pilates 🧘‍♂️: Max participants: 10, Cost: 80.
+#Pilates 🧘‍♀️: Max participants: 30, Cost: 60.
+#Thai Boxing 🥊: Max participants: 20, Cost: 100.
+
+##Usage 🛠️
+#Register a Client
 Client client1 = ClientFactory.createClient("John Doe", Gender.Male, "25-12-1995");
-Create a Session
-java
-Copy code
+#Create a Session
 Session s1 = gymSecretary.addSession(SessionType.Pilates, "23-01-2025 10:00", ForumType.All, instructor1);
-Add a Client to a Session
-java
-Copy code
+#Add a Client to a Session
+
 try {
     s1.addParticipant(client1);
 } catch (NoAvailableSpotsException e) {
     System.out.println("Registration failed: " + e.getMessage());
 }
-Notify Participants
-java
-Copy code
+#Notify Participants
 NotificationManager.sendToSession(s1, "The session will start 10 minutes late.");
+
+#An example main file is included.
+
+#
